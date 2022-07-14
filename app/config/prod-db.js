@@ -11,5 +11,6 @@ module.exports = {
         idle: 10000
     },
     TIMEZONE: "+07:00",
-    VERSION: '/api/v1'
+    VERSION: '/api/v1',
+    URL: 'postgres://teeelcsxkgswib:a9dbdbfebcb5be72bbd43e28b20eac1e667541b3a17b1f830ac0994a13d98b54@ec2-23-23-182-238.compute-1.amazonaws.com:5432/dagki726q806bf'
 }

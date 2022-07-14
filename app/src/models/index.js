@@ -7,9 +7,15 @@ const Sequelize = require('sequelize');
 /**
     *Database configuration. 
 */
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+const sequelize = new Sequelize(dbConfig.URL, {
     dialect: dbConfig.DIALECT,
-    timezone: dbConfig.TIMEZONE
+    timezone: dbConfig.TIMEZONE,
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
 })
 
 
