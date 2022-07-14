@@ -12,7 +12,7 @@ const https = require('https');
 const path = require('path');
 const fs = require('fs');
 
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 db.sequelize.sync({ force: false });
