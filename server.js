@@ -17,6 +17,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 db.sequelize.sync({ force: false });
 
+
+app.use('/', (req, res, next) => {
+    res.send('Welcome to McWarteg back-end service! API is Ready.')
+})
+
 /**
     *Route initiation.
 */
@@ -24,11 +29,6 @@ require('./app/src/routes/menu.routes')(app)
 require('./app/src/routes/cart.routes')(app)
 require('./app/src/routes/transaction.routes')(app)
 
-
-
-app.use('/', (req, res, next) => {
-    res.send('Welcome to McWarteg back-end service! API is Ready.')
-})
 
 /**
     *Launch server. 
