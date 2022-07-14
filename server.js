@@ -4,7 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const PORT = 3001;
+const PORT = process.env.PORT | 3001;
 const db = require('./app/src/models/index');
 const app = express();
 const http = require('http');
@@ -33,10 +33,13 @@ app.use('/', (req, res, next) => {
 /**
     *Launch server. 
 */
-
-https.createServer({
-    key:    fs.readFileSync(path.join(__dirname, 'app/config/cert', 'key.pem')),
-    cert:   fs.readFileSync(path.join(__dirname, 'app/config/cert', 'cert.pem'))
-}, app).listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
 })
+
+// https.createServer({
+//     key:    fs.readFileSync(path.join(__dirname, 'app/config/cert', 'key.pem')),
+//     cert:   fs.readFileSync(path.join(__dirname, 'app/config/cert', 'cert.pem'))
+// }, app).listen(PORT, () => {
+//     console.log(`Server is running on PORT ${PORT}`);
+// })
