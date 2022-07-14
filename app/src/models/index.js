@@ -1,7 +1,7 @@
 /**
     *Module dependencies. 
 */
-const dbConfig = require('../../config/dev-db');
+const dbConfig = require('../../config/prod-db');
 const Sequelize = require('sequelize');
 
 /**
